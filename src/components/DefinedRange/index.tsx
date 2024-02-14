@@ -4,6 +4,7 @@ import styles from '../../styles';
 import { defaultInputRanges, defaultStaticRanges } from '../../defaultRanges';
 import { DateRange } from '../DayCell';
 import InputRangeField from '../InputRangeField';
+import { findNextRangeIndex } from '../../utils';
 
 export type DefinedRangeProps = {
   inputRanges?: {label: string, range: (value: number) => DateRange, getCurrentValue: (range: DateRange) => number | "-" | "∞"}[],
@@ -14,9 +15,11 @@ export type DefinedRangeProps = {
   footerContent?: ReactElement,
   focusedRange?: number[],
   rangeColors?: string[],
+  focusNextRangeOnDefinedRangeClick?: boolean,
   onPreviewChange?: (value?: DateRange) => void,
   onChange?: (value: {[x: string]: DateRange}) => void,
   renderStaticRangeLabel?: (staticRange: DefinedRangeProps["staticRanges"][number]) => ReactElement
+  onRangeFocusChange?: (range: number[]) => void,
 };
 
 export default function DefinedRange({
@@ -28,9 +31,11 @@ export default function DefinedRange({
   rangeColors = ['#3d91ff', '#3ecf8e', '#fed14c'],
   ranges = [],
   focusedRange = [0, 0],
+  focusNextRangeOnDefinedRangeClick,
   onChange,
   onPreviewChange,
-  renderStaticRangeLabel
+  renderStaticRangeLabel,
+  onRangeFocusChange
 }: DefinedRangeProps) {
 
   const [state, setState] = React.useState({rangeOffset: 0, focusedInput: -1});
@@ -59,6 +64,11 @@ export default function DefinedRange({
     onChange({
       [selectedRange.key || `range${focusedRange[0] + 1}`]: { ...selectedRange, ...range },
     });
+
+    if (focusNextRangeOnDefinedRangeClick) {
+      const nextFocusRange = [findNextRangeIndex(ranges, focusedRange[0]), 0];
+      onRangeFocusChange?.(nextFocusRange);
+    }
   }
 
   const getRangeOptionValue = (option: DefinedRangeProps['inputRanges'][number]) => {
