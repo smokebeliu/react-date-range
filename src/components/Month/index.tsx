@@ -2,7 +2,7 @@ import React, { CSSProperties, MouseEvent, memo } from 'react';
 import { getMonthDisplayRange } from '../../utils';
 import { StylesType } from '../../styles';
 import DayCell, { DayCellProps, DateRange } from '../DayCell';
-import { FormatOptions, eachDayOfInterval, endOfDay, endOfWeek, format, isAfter, isBefore, isSameDay, isWeekend, isWithinInterval, startOfDay, startOfWeek } from 'date-fns';
+import { FormatOptions, eachDayOfInterval, endOfDay, endOfWeek, format, isAfter, isBefore, isSameDay, isWeekend, isWithinInterval, startOfDay, startOfMonth, startOfWeek } from 'date-fns';
 
 type MonthProps = {
   style: CSSProperties,
@@ -78,7 +78,13 @@ export default memo(function Month({
   const minDateInternal = !!minDate && startOfDay(minDate);
   const maxDateInternal = !!maxDate && endOfDay(maxDate);
 
-  const monthDisplay = getMonthDisplayRange(maxDate || month, dateOptions, fixedHeight);
+  let newMonthDisplayDate = month;
+
+  if (maxDate && (maxDate.getFullYear() < month.getFullYear() || (maxDate.getFullYear() == month.getFullYear() && maxDate.getMonth() < month.getMonth()))) {
+    newMonthDisplayDate = startOfMonth(maxDate);
+  }
+
+  const monthDisplay = getMonthDisplayRange(newMonthDisplayDate, dateOptions, fixedHeight);
 
   let rangesInternal = ranges;
 
