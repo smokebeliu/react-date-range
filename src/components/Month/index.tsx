@@ -75,10 +75,10 @@ export default memo(function Month({
 
   const now = new Date();
 
-  const minDateInternal = minDate && startOfDay(minDate);
-  const maxDateInternal = maxDate && endOfDay(maxDate);
+  const minDateInternal = !!minDate && startOfDay(minDate);
+  const maxDateInternal = !!maxDate && endOfDay(maxDate);
 
-  const monthDisplay = getMonthDisplayRange(month, dateOptions, fixedHeight);
+  const monthDisplay = getMonthDisplayRange(maxDate || month, dateOptions, fixedHeight);
 
   let rangesInternal = ranges;
 
