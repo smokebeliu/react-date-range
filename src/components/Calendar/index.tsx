@@ -66,6 +66,8 @@ export type CalendarProps = {
   preventSnapRefocus?: boolean,
   ariaLabels?: AriaLabelsType,
   preventScrollToFocusedMonth?: boolean
+  showWeekNumbers?: boolean,
+  weeksNumbersLabel?: string,
 };
 
 export default function Calendar({
@@ -112,7 +114,9 @@ export default function Calendar({
   calendarFocus = 'forwards',
   preventSnapRefocus = false,
   ariaLabels = {},
-  preventScrollToFocusedMonth = false
+  preventScrollToFocusedMonth = false,
+  showWeekNumbers = false,
+  weeksNumbersLabel,
 }: CalendarProps) {
 
   const refs = React.useRef({
@@ -395,6 +399,8 @@ export default function Calendar({
                     maxDate={maxDate}
                     minDate={minDate}
                     date={date}
+                    weeksNumbersLabel={weeksNumbersLabel}
+                    showWeekNumbers={showWeekNumbers}
                   />
                 );
               }}
@@ -443,6 +449,8 @@ export default function Calendar({
                 maxDate={maxDate}
                 minDate={minDate}
                 date={date}
+                weeksNumbersLabel={weeksNumbersLabel}
+                showWeekNumbers={showWeekNumbers}
               />
             );
           })}

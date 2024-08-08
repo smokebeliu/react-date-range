@@ -47,6 +47,7 @@ const [state, setState] = useState([
   direction="horizontal"
   preventSnapRefocus={true}
   calendarFocus="backwards"
+  showWeekNumbers
 />;
 ```
 
@@ -77,6 +78,7 @@ const [state, setState] = useState({
   direction="vertical"
   scroll={{ enabled: true }}
   ranges={[state.selection, state.compare]}
+  showWeekNumbers
 />;
 ```
 
@@ -108,6 +110,7 @@ const [state, setState] = useState({
 <DateRangePicker
   onChange={item => setState({ ...state, ...item })}
   ranges={[state.selection1, state.selection2, state.selection3]}
+  showWeekNumbers
 />;
 ```
 
@@ -137,6 +140,7 @@ const [state, setState] = useState({
   months={2}
   ranges={[state.selection1, state.selection2]}
   direction="horizontal"
+  showWeekNumbers
   ariaLabels={{
     dateInput: {
       selection1: { startDate: "start date input of selction 1", endDate: "end date input of selction 1" },
@@ -203,6 +207,7 @@ function customDayContent(day) {
   ranges={[state.selection1, state.selection2]}
   direction="horizontal"
   dayContentRenderer={customDayContent}
+  showWeekNumbers
   ariaLabels={{
     dateInput: {
       selection1: { startDate: "start date input of selction 1", endDate: "end date input of selction 1" },
@@ -237,6 +242,7 @@ const [state, setState] = useState({
 });
 
 <DateRangePicker
+  showWeekNumbers
   onChange={item => setState({ ...state, ...item })}
   months={1}
   minDate={addDays(new Date(), -30)}

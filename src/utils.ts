@@ -7,7 +7,7 @@ import {
   differenceInCalendarDays,
   differenceInCalendarMonths,
   addDays,
-  WeekOptions,
+  WeekOptions, getISOWeek,
 } from 'date-fns';
 import { StylesType } from './styles';
 import { DateRange } from './components/DayCell';
@@ -80,4 +80,15 @@ export function generateStyles(sources: Partial<StylesType>[]) {
       return styles;
     }, {});
   return generatedStyles;
+}
+
+export function getWeeksNumbers(start: Date, end: Date) {
+  const numbers = [];
+  let current = getISOWeek(start);
+  while (start < end) {
+    numbers.push(current);
+    start = addDays(start, 7);
+    current = getISOWeek(start);
+  }
+  return numbers;
 }

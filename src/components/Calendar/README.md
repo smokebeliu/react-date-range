@@ -76,7 +76,7 @@ const [date, setDate] = useState(null);
       </option>
     ))}
   </select>
-  <Calendar onChange={item => setDate(item)}
+  <Calendar onChange={item => setDate(item)} showWeekNumbers
  locale={locales[locale]} date={date} />
 </div>;
 ```

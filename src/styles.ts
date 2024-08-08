@@ -51,6 +51,9 @@ export type StylesType = {
   infiniteMonths: string;
   monthsVertical: string;
   monthsHorizontal: string;
+  monthWrapper: string;
+  weekNumbersWrapper: string;
+  weekNumbersLabel: string;
 };
 
 const Styles = {
@@ -105,6 +108,9 @@ const Styles = {
   infiniteMonths: 'rdrInfiniteMonths',
   monthsVertical: 'rdrMonthsVertical',
   monthsHorizontal: 'rdrMonthsHorizontal',
+  monthWrapper: 'rdrMonthWrapper',
+  weekNumbersWrapper: 'rdrWeekNumbersWrapper',
+  weekNumbersLabel: 'rdrWeekNumbersLabel',
 };
 
 export default Styles;

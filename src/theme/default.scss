@@ -394,3 +394,24 @@
   color: #849095;
   padding: 0.833em;
 }
+
+.rdrMonthWrapper{
+  display: flex;
+}
+
+.rdrWeekNumbersWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
+}
+
+.rdrWeekNumbersLabel {
+  font-weight: 400;
+  line-height: 2.667em;
+  color: rgb(132, 144, 149);
+}
+
+.rdrWeekNumbersWrapper > span {
+  line-height: 3.000em;
+  height: 3.000em;
+}
