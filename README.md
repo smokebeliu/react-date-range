@@ -1,12 +1,12 @@
+# Date Range Picker PA version
+
 A date library agnostic React component for choosing dates and date ranges. Uses [date-fns](http://date-fns.org/) for date operations.
 
 # Notice ⚠️
 
-This awesome project is a fork of the original [react-date-range](https://github.com/hypeserver/react-date-range) by hypeserver.
+This project is a fork of the original [@iroomit/react-date-range](https://github.com/iroomitapp/react-date-range) by iroomit.
 
-This fork aims at keeping this project alive!
-
-Dependencies have been upgraded, class components updated to function components and the entire project has been rewritten in TypeScript. Some of the code has also been optimized further with newer React features.
+Added showWeekNumbers prop to show week numbers in the calendar.
 
 ### Why should you use `@pa/react-date-range`?
 
@@ -165,6 +165,8 @@ function MyComponent() {
 | dayContentRenderer                              | Function  | null               | Function to customize the rendering of Calendar Day. given a date is supposed to return what to render.                                                                                                                    |
 | preventScrollToFocusedMonth                     | Boolean   | false              | When two or more months are open, prevent the shift of the focused month to the left.                                                                                                                                      |
 | focusNextRangeOnDefinedRangeClick               | Boolean   | false              | When a defined range is clicked, the next range will be focused                                                                                                                                                            |
+| showWeekNumbers                                 | Boolean   | false              | Show week number                                                                                                                                                                                                           |
+| weeksNumbersLabel                               | String    | 'W'                | Title for week number column                                                                                                                                                                                               |
 
 #### Type DateRange:
  ```ts
@@ -219,8 +221,3 @@ type Scroll = {
 - After merging, tag the master commit with `release/<new_version>` and let Github Action handle publishing
 - = Profit 🙈
 
-### TODOs
-
-- Make mobile friendly (integrate tap and swipe actions)
-- Add tests
-- Improve documentation
