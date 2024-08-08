@@ -8,7 +8,7 @@ This project is a fork of the original [@iroomit/react-date-range](https://githu
 
 Added showWeekNumbers prop to show week numbers in the calendar.
 
-### Why should you use `@pa/react-date-range`?
+### Why should you use `pa-react-date-range`?
 
 - Fully maintained as of 2024!
 - Stateless date operations
@@ -24,20 +24,20 @@ Added showWeekNumbers prop to show week numbers in the calendar.
 ### Installation
 
 ```
-npm install @pa/react-date-range
+npm install pa-react-date-range
 ```
 
 or
 
 ```
-yarn add @pa/react-date-range
+yarn add pa-react-date-range
 ```
 
 then, styles and theme file must be imported:
 
 ```
-import '@pa/react-date-range/dist/styles.css'; // main css file
-import '@pa/react-date-range/dist/theme/default.css'; // theme css file
+import 'pa-react-date-range/dist/styles.css'; // main css file
+import 'pa-react-date-range/dist/theme/default.css'; // theme css file
 ```
 
 This plugin expects `react` and `date-fns` as peerDependencies, It means that you need to install them in your project folder.
@@ -57,14 +57,14 @@ yarn add react date-fns
 You need to import skeleton and theme styles first.
 
 ```javascript
-import '@pa/react-date-range/dist/styles.css'; // main style file
-import '@pa/react-date-range/dist/theme/default.css'; // theme css file
+import 'pa-react-date-range/dist/styles.css'; // main style file
+import 'pa-react-date-range/dist/theme/default.css'; // theme css file
 ```
 
 ### `DatePicker`
 ```javascript
 import React from 'react';
-import { Calendar } from '@pa/react-date-range';
+import { Calendar } from 'pa-react-date-range';
 
 function MyComponent() {
 
@@ -81,7 +81,7 @@ function MyComponent() {
 ### `DateRangePicker / DateRange`
 ```javascript
 import React from 'react';
-import { DateRangePicker } from '@pa/react-date-range';
+import { DateRangePicker } from 'pa-react-date-range';
 
 function MyComponent() {
 

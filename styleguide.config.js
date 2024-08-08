@@ -3,7 +3,7 @@ const isDEV = process.env.NODE_ENV === 'development';
 const moduleSource = isDEV ? 'src' : 'src';
 
 module.exports = {
-  title: '@pa/react-date-range',
+  title: 'pa-react-date-range',
   showSidebar: false,
   template: {
     head: {
@@ -41,7 +41,7 @@ module.exports = {
   getComponentPathLine(componentPath) {
     const arr = componentPath.split('/');
     const name = arr[arr.length - 2];
-    return `import { ${name} } from '@pa/react-date-range';`;
+    return `import { ${name} } from 'pa-react-date-range';`;
   },
 
   styles: function styles(theme) {
