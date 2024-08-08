@@ -1,5 +1,5 @@
 {
-  "name": "@iroomit/react-date-range",
+  "name": "@pa/react-date-range",
   "version": "3.2.2",
   "description": "A React component for choosing dates and date ranges.",
   "main": "dist/index.js",
@@ -21,22 +21,10 @@
     "datepicker",
     "rangepicker"
   ],
-  "contributors": [
-    "Burak Can <neoberg@gmail.com> (https://github.com/burakcan)",
-    "Mehmet Kamil Morcay <mehmetmorcay@gmail.com> (https://github.com/mkg0)",
-    "Kamyar Ghasemlou <github@kamy.me> (https://github.com/kamyar)",
-    "Engin Semih Basmaci <semih.basmaci@gmail.com> (https://github.com/mortargrind)",
-    "Onur Kerimov <onurkerimov@gmail.com> (https://github.com/onurkerimov)",
-    "David Goguen <davidgoguen@iroomit.com> (https://github.com/goguda)",
-    "Mike Delez <mdelez.ch@gmail.com> (https://github.com/mdelez)"
-  ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/iroomitapp/react-date-range"
-  },
-  "bugs": {
-    "url": "http://github.com/iroomitapp/react-date-range/issues"
+    "url": "https://github.com/smokebeliu/react-date-range"
   },
   "browserslist": [
     "defaults"
